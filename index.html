@@ -1,97 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Destnly - Find Your Perfect Match ❤️</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { display: none;}
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #bc96e5 0%, #a880de 100%); }
+        .gradient-text { background: linear-gradient(135deg, #bc96e5 0%, #a880de 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .floating-card { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .pulse-heart { animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#bc96e5',
+                        primaryDark: '#a880de',
+                        onPrimary: '#ffffff',
+                        background: '#f7f3fc',
+                        surface: '#ffffff',
+                        text: '#1f1f1f',
+                        textSecondary: '#555555',
+                        border: '#E7E3F3',
+                        muted: '#7A7687',
+                        error: '#FF4D4D',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="logo.png" alt="Destnly Logo" />
-      <span>Destnly</span>
+<body class="bg-background">
+
+<header id="header" class="bg-surface/80 backdrop-blur-sm border-b border-border fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center">
+    <img src="destnly_logo.png" alt="Destnly Logo"
+         class="w-8 h-8 object-contain" />
+</div>
+                <h1 class="text-2xl font-bold gradient-text">Destnly</h1>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <span class="text-textSecondary hover:text-primary transition-colors cursor-pointer">Features</span>
+                <span class="text-textSecondary hover:text-primary transition-colors cursor-pointer">About</span>
+                <span class="text-textSecondary hover:text-primary transition-colors cursor-pointer">Contact</span>
+                <button class="bg-primary text-onPrimary px-6 py-2 rounded-lg hover:bg-primaryDark transition-colors">
+                    Get Notified
+                </button>
+            </nav>
+        </div>
     </div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#features">Features</a></li>
-      <li><a href="#download">Download</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero fade-in">
-    <div class="hero-content">
-      <h1>Find Your <span>Destiny</span> with <span>Destnly</span></h1>
-      <p>Smart connections, real chemistry, and meaningful relationships — all in one app.</p>
-      <div class="cta-buttons">
-        <a href="#" class="btn primary">Download on Play Store</a>
-        <a href="#" class="btn secondary">Download on App Store</a>
-      </div>
+<main id="main-content">
+    <section id="hero-section" class="pt-24 pb-20 px-6 h-[700px] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center h-full">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center space-x-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-sparkles"></i>
+                            <span>Coming Soon</span>
+                        </div>
+                        <h1 class="text-5xl lg:text-6xl font-bold text-text leading-tight">
+                            Find Your <span class="gradient-text">Destnly</span> in Love
+                        </h1>
+                        <p class="text-xl text-textSecondary leading-relaxed">
+                            The future of meaningful connections. Destnly uses advanced matching algorithms to help you discover your perfect match based on compatibility, values, and shared dreams.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="gradient-bg text-onPrimary px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transition-all">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Join Waitlist
+                        </button>
+                        <button class="border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary hover:text-onPrimary transition-all">
+                            <i class="fas fa-play mr-2"></i>
+                            Watch Demo
+                        </button>
+                    </div>
+
+                    <div class="flex items-center space-x-8 pt-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-text">50K+</div>
+                            <div class="text-sm text-muted">Pre-registrations</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-text">98%</div>
+                            <div class="text-sm text-muted">Match Success</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-text">24/7</div>
+                            <div class="text-sm text-muted">Support</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="floating-card">
+                        <img class="w-full h-96 object-cover rounded-3xl shadow-2xl" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/603443d68b-6b0dc005b3728c10032f.png" alt="modern dating app interface mockup on smartphone with purple gradient design, romantic couple silhouettes, heart icons, clean UI elements" />
+                    </div>
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl"></div>
+                    <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-primaryDark/20 rounded-full blur-xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features-section" class="py-20 px-6 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="text-4xl font-bold text-text">Why Choose Destnly?</h2>
+                <p class="text-xl text-textSecondary max-w-3xl mx-auto">
+                    Experience the next generation of dating with AI-powered matching, advanced compatibility analysis, and meaningful connection features.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div id="feature-ai" class="bg-background p-8 rounded-2xl border border-border hover:shadow-lg transition-all">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-onPrimary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text mb-4">AI-Powered Matching</h3>
+                    <p class="text-textSecondary">Advanced algorithms analyze your preferences, personality, and behavior to find your most compatible matches.</p>
+                </div>
+
+                <div id="feature-verification" class="bg-background p-8 rounded-2xl border border-border hover:shadow-lg transition-all">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-onPrimary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text mb-4">Verified Profiles</h3>
+                    <p class="text-textSecondary">Multi-layer verification ensures authentic profiles and a safe dating environment for all users.</p>
+                </div>
+
+                <div id="feature-compatibility" class="bg-background p-8 rounded-2xl border border-border hover:shadow-lg transition-all">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-heart text-onPrimary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text mb-4">Deep Compatibility</h3>
+                    <p class="text-textSecondary">Comprehensive personality assessments and lifestyle matching for long-lasting relationships.</p>
+                </div>
+
+                <div id="feature-video" class="bg-background p-8 rounded-2xl border border-border hover:shadow-lg transition-all">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-video text-onPrimary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text mb-4">Video First Dates</h3>
+                    <p class="text-textSecondary">Safe virtual dating experiences with built-in video chat and interactive date activities.</p>
+                </div>
+
+                <div id="feature-privacy" class="bg-background p-8 rounded-2xl border border-border hover:shadow-lg transition-all">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-lock text-onPrimary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text mb-4">Privacy First</h3>
+                    <p class="text-textSecondary">End-to-end encryption and complete control over your personal information and visibility.</p>
+                </div>
+
+                <div id="feature-events" class="bg-background p-8 rounded-2xl border border-border hover:shadow-lg transition-all">
+                    <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-heart text-onPrimary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text mb-4">Local Events</h3>
+                    <p class="text-textSecondary">Discover and attend local dating events, mixers, and activities with potential matches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="countdown-section" class="py-20 px-6 gradient-bg">
+        <div class="max-w-4xl mx-auto text-center text-onPrimary">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-bold">Launch Countdown</h2>
+                <p class="text-xl opacity-90">Get ready for the future of dating</p>
+                
+                <div class="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
+                    <div class="bg-onPrimary/20 backdrop-blur-sm rounded-xl p-6">
+                        <div class="text-3xl font-bold">45</div>
+                        <div class="text-sm opacity-80">Days</div>
+                    </div>
+                    <div class="bg-onPrimary/20 backdrop-blur-sm rounded-xl p-6">
+                        <div class="text-3xl font-bold">12</div>
+                        <div class="text-sm opacity-80">Hours</div>
+                    </div>
+                    <div class="bg-onPrimary/20 backdrop-blur-sm rounded-xl p-6">
+                        <div class="text-3xl font-bold">34</div>
+                        <div class="text-sm opacity-80">Minutes</div>
+                    </div>
+                    <div class="bg-onPrimary/20 backdrop-blur-sm rounded-xl p-6">
+                        <div class="text-3xl font-bold">56</div>
+                        <div class="text-sm opacity-80">Seconds</div>
+                    </div>
+                </div>
+
+                <div class="pt-8">
+                    <button class="bg-onPrimary text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transition-all">
+                        <i class="fas fa-bell mr-2"></i>
+                        Notify Me at Launch
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter-section" class="py-20 px-6 bg-surface">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="space-y-8">
+                <h2 class="text-4xl font-bold text-text">Stay in the Loop</h2>
+                <p class="text-xl text-textSecondary">Be the first to know about launch updates, exclusive features, and early access opportunities.</p>
+                
+                <div class="bg-background p-8 rounded-2xl border border-border max-w-2xl mx-auto">
+                    <form class="space-y-4">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" placeholder="Enter your email address" class="flex-1 px-4 py-3 rounded-lg border border-border focus:border-primary focus:outline-none">
+                            <button type="submit" class="gradient-bg text-onPrimary px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all">
+                                Subscribe
+                            </button>
+                        </div>
+                        <p class="text-sm text-muted">No spam, unsubscribe anytime. We respect your privacy.</p>
+                    </form>
+                </div>
+
+                <div class="flex items-center justify-center space-x-8 text-textSecondary">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-users"></i>
+                        <span>50,000+ subscribers</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-star"></i>
+                        <span>Exclusive updates</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-gift"></i>
+                        <span>Early access perks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="footer" class="bg-text text-onPrimary py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center">
+                        <i class="fas fa-heart text-onPrimary"></i>
+                    </div>
+                    <h1 class="text-xl font-bold">Destnly</h1>
+                </div>
+                <p class="text-onPrimary/70">The future of meaningful connections and lasting relationships.</p>
+                <div class="flex space-x-4">
+                    <span class="w-10 h-10 bg-onPrimary/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                        <i class="fab fa-twitter"></i>
+                    </span>
+                    <span class="w-10 h-10 bg-onPrimary/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                        <i class="fab fa-instagram"></i>
+                    </span>
+                    <span class="w-10 h-10 bg-onPrimary/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors cursor-pointer">
+                        <i class="fab fa-facebook"></i>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <h3 class="font-semibold">Product</h3>
+                <ul class="space-y-2 text-onPrimary/70">
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">Features</span></li>
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">Pricing</span></li>
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">Security</span></li>
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">Updates</span></li>
+                </ul>
+            </div>
+            
+            <div class="space-y-4">
+                <h3 class="font-semibold">Company</h3>
+                <ul class="space-y-2 text-onPrimary/70">
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">About</span></li>
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">Blog</span></li>
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">Careers</span></li>
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">Contact</span></li>
+                </ul>
+            </div>
+            
+            <div class="space-y-4">
+                <h3 class="font-semibold">Support</h3>
+                <ul class="space-y-2 text-onPrimary/70">
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">Help Center</span></li>
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">Privacy Policy</span></li>
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">Terms of Service</span></li>
+                    <li><span class="hover:text-primary transition-colors cursor-pointer">Community</span></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-onPrimary/20 mt-12 pt-8 text-center text-onPrimary/70">
+            <p>&copy; 2024 Destnly. All rights reserved. Made with <i class="fas fa-heart text-primary"></i> for meaningful connections.</p>
+        </div>
     </div>
-    <div class="hero-image slide-up">
-      <img src="couple.png" alt="Happy Couple" />
-    </div>
-  </section>
+</footer>
 
-  <!-- About Section -->
-  <section id="about" class="about fade-in">
-    <h2>About Destnly</h2>
-    <p>Destnly isn’t just another dating app. It’s where genuine connections begin.  
-    Our smart algorithm helps you meet people who truly match your vibe and interests.</p>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="features slide-up">
-    <h2>Key Features</h2>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <img src="chat-icon.png" alt="Chat" />
-        <h3>Instant Chat</h3>
-        <p>Connect instantly with matches who share your energy.</p>
-      </div>
-      <div class="feature-card">
-        <img src="map-icon.png" alt="Nearby" />
-        <h3>Smart Matching</h3>
-        <p>AI-powered matching that helps you meet people nearby who truly get you.</p>
-      </div>
-      <div class="feature-card">
-        <img src="spark-icon.png" alt="Spark" />
-        <h3>Meaningful Bonds</h3>
-        <p>Destnly believes in chemistry that lasts — not just a swipe.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Download Section -->
-  <section id="download" class="download fade-in">
-    <h2>Get the App</h2>
-    <p>Ready to meet your match? Download Destnly now.</p>
-    <div class="cta-buttons">
-      <a href="#" class="btn primary">Google Play</a>
-      <a href="#" class="btn secondary">App Store</a>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact slide-up">
-    <h2>Contact Us</h2>
-    <p>For support or partnership inquiries, email us at <strong>support@destnly.com</strong></p>
-    <div class="social-links">
-      <a href="#">Instagram</a>
-      <a href="#">Twitter</a>
-      <a href="#">LinkedIn</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Destnly. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
