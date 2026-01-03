@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-         :root {
+     :root {
             --accent: #8b7cf6;
             --accent-dark: #6f63e6;
             --text: #1f2937;
@@ -252,22 +252,85 @@
         /* ---------- FOOTER ---------- */
         
         footer {
-            padding: 40px 24px;
+            background: #18192a;
+            color: #e5e7eb;
+            padding: 64px 24px 40px 24px;
             text-align: center;
             font-size: 14px;
-            color: #6b7280;
+            position: relative;
+            z-index: 10;
+            .footer-gradient-bridge {
+                height: 64px;
+                background: linear-gradient(to bottom, rgba(246, 242, 255, 0) 0%, #f6f2ff 40%, #23243a 100%);
+            }
+            footer {
+                background: #23243a;
+                color: #e5e7eb;
+                padding: 0 0 0 0;
+                font-size: 15px;
+                letter-spacing: 0.01em;
+            }
+            .footer-inner {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 64px 24px 32px 24px;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 48px;
+            }
+            .footer-brand {
+                font-size: 1.25rem;
+                font-weight: 700;
+                color: #fff;
+                margin-bottom: 10px;
+            }
+            .footer-desc {
+                color: #b4b8d1;
+                font-size: 1rem;
+                margin-top: 8px;
+                line-height: 1.6;
+            }
+            .footer-col strong {
+                color: #fff;
+                font-size: 1.08em;
+                font-weight: 600;
+                margin-bottom: 10px;
+                display: block;
+                letter-spacing: 0.01em;
+            }
+            .footer-col a {
+                color: #b4b8d1;
+                text-decoration: none;
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 500;
+                transition: color 0.2s;
+            }
+            .footer-col a:hover {
+                color: #fff;
+            }
+            .footer-bottom {
+                text-align: center;
+                color: #7c7e97;
+                font-size: 13px;
+                padding: 32px 0 12px 0;
+                border-top: 1px solid #2e304a;
+                margin-top: 0;
+            }
+            @media (max-width: 700px) {
+                .footer-inner {
+                    grid-template-columns: 1fr;
+                    gap: 32px;
+                    padding: 40px 12px 24px 12px;
+                }
+            }
+            text-align: center
         }
-        /* ---------- RESPONSIVE ---------- */
         
-        @media(max-width:1024px) {
-            .hero-inner {
-                grid-template-columns: 1fr;
-                text-align: center
-            }
-            .phone-stack {
-                margin: 60px auto 0
-            }
+        .phone-stack {
+            margin: 60px auto 0
         }
+    }
     </style>
 </head>
 
@@ -276,8 +339,9 @@
 
     <nav>
         <div class="nav-inner">
-            <div class="logo">
-                <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" style="height: 48px; width: auto; border-radius: 12px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">
+            <div class="logo" style="display:flex;align-items:center;gap:12px;">
+                <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" style="height:38px;width:auto;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                <span style="font-size:1.45rem;font-weight:700;color:#6f63e6;letter-spacing:0.5px;">Destnly</span>
             </div>
             <div class="nav-links">
                 <a href="#top">Home</a>
@@ -313,16 +377,106 @@
 
     <section class="section">
         <div class="section-inner">
-            <!-- Features section moved to features.html -->
+            <!-- Section A: Why Destnly exists -->
+            <h2>Dating, with intention</h2>
+            <p>
+                We created Destnly for people who are tired of endless swiping and shallow matches. Destnly is designed for those who want clarity, respect, and real emotional connection — whether that leads to love, partnership, or something meaningful in between.
+            </p>
         </div>
     </section>
 
-    <section class="cta">
-        <!-- CTA section removed as requested -->
+    <!-- Section B: How Destnly feels different -->
+    <section class="section">
+        <div class="section-inner">
+            <h2>Designed for how people actually connect</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Less noise, more clarity</h3>
+                    <p>
+                        We reduce distraction and surface matches that align with what you care about — not just what looks good at first glance.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>Real people, real intent</h3>
+                    <p>
+                        Profiles on Destnly are built around authenticity, helping you understand the person beyond photos.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>Conversations that flow</h3>
+                    <p>
+                        Thoughtful prompts and shared context help conversations start naturally and stay meaningful.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            © 2026 Destnly. Built for real connections.
-        </footer>
+    <!-- Section C: Trust & Safety Preview -->
+    <section class="section">
+        <div class="section-inner">
+            <h2>A space built on trust</h2>
+            <p>
+                Safety, privacy, and respect are not optional — they’re foundational. Destnly is built to protect your experience at every step.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <h3>Privacy-first by design</h3>
+                    <p>
+                        You control your visibility, data, and interactions — always.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>Verified presence</h3>
+                    <p>
+                        We actively work to reduce fake accounts and bad actors.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>Respect-driven community</h3>
+                    <p>
+                        Clear standards and reporting tools help keep Destnly welcoming for everyone.
+                    </p>
+                </div>
+            </div>
+            <div style="margin-top:40px">
+                <a href="safety.html" class="join-btn">Learn about Safety</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-gradient-bridge"></div>
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand" style="display:flex;align-items:center;gap:12px;">
+                    <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" style="height:38px;width:auto;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                    <span>Destnly</span>
+                </div>
+                <div class="footer-desc" style="margin-top:10px;font-size:1.08rem;color:#b4b8d1;font-weight:500;">
+                    Where stories begin
+                </div>
+            </div>
+            <div class="footer-col">
+                <strong>Product</strong>
+                <a href="features.html">Features</a>
+                <a href="safety.html">Safety</a>
+            </div>
+            <div class="footer-col">
+                <strong>Company</strong>
+                <a href="about.html">About</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="footer-col">
+                <strong>Legal</strong>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Destnly. All rights reserved.
+        </div>
+    </footer>
 
 </body>
 
