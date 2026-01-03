@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destnly – Find the connection meant for you</title>
+
+    <!-- Font Awesome CDN for social icons (latest v6.5.2) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Social Media Footer Icons - Modern, Premium Style */
+        
+        .footer-social {
+            display: flex;
+            gap: 18px;
+            margin-top: 22px;
+            margin-bottom: 8px;
+        }
+        
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(140, 124, 246, 0.13);
+            color: #b4b8d1;
+            font-size: 1.35rem;
+            transition: background 0.22s cubic-bezier(.4, 0, .2, 1), color 0.22s cubic-bezier(.4, 0, .2, 1), box-shadow 0.22s cubic-bezier(.4, 0, .2, 1), transform 0.18s cubic-bezier(.4, 0, .2, 1);
+            outline: none;
+            border: none;
+        }
+        
+        .footer-social a:focus {
+            box-shadow: 0 0 0 2px #8b7cf6;
+        }
+        
+        .footer-social a:hover {
+            background: linear-gradient(135deg, #8b7cf6 0%, #b4b8d1 100%);
+            color: #fff;
+            transform: translateY(-3px) scale(1.12);
+            box-shadow: 0 4px 16px 0 rgba(140, 124, 246, 0.13);
+        }
+        
+        .footer-social a .fa-brands {
+            pointer-events: none;
+        }
+        
+        @media (max-width: 600px) {
+            .footer-social {
+                gap: 12px;
+                margin-top: 18px;
+            }
+            .footer-social a {
+                width: 38px;
+                height: 38px;
+                font-size: 1.1rem;
+            }
+        }
+        
+         :root {
+            --accent: #8b7cf6;
+            --accent-dark: #6f63e6;
+            --text: #1f2937;
+            --muted: #6b7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        
+        body {
+            font-family: Inter, system-ui;
+            color: var(--text);
+            background: #f6f2ff;
+            overflow-x: hidden;
+        }
+        /* ---------- BACKGROUND LAYER ---------- */
+        
+        .page-bg {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient( to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.75)), url("assets/images/hero-bg.png") center/cover no-repeat;
+            z-index: -2;
+        }
+        /* ---------- NAV ---------- */
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(168, 128, 222, 0.8);
+            backdrop-filter: blur(14px);
+        }
+        
+        .nav-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        /* ---------- HERO ---------- */
+        
+        .hero {
+            padding: 120px 24px 180px;
+        }
+        
+        .hero-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 90px;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 54px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 520px;
+        }
+        
+        .hero-actions {
+            margin-top: 30px;
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        
+        .store-buttons {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .store-buttons img {
+            height: 48px;
+            filter: drop-shadow(0 12px 28px rgba(139, 124, 246, .35));
+            transition: .25s ease;
+        }
+        
+        .store-buttons img:hover {
+            transform: translateY(-4px);
+        }
+        
+        .join-btn {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: #fff;
+            padding: 14px 26px;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 18px 40px rgba(139, 124, 246, .45);
+            transition: transform 0.25s cubic-bezier(.4, 1.5, .5, 1), box-shadow 0.25s;
+        }
+        
+        .join-btn:hover,
+        .join-btn:focus {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 28px 60px rgba(139, 124, 246, .55);
+        }
+        /* ---------- PHONES ---------- */
+        
+        .phone-stack {
+            position: relative;
+            width: 420px;
+            height: 520px;
+        }
+        
+        .phone {
+            position: absolute;
+            width: 280px;
+            border-radius: 32px;
+            box-shadow: 0 40px 90px rgba(0, 0, 0, .25);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .phone.back {
+            left: 0;
+            top: 40px;
+            transform: none;
+            opacity: .95;
+        }
+        
+        .phone.front {
+            right: 0;
+            top: 0;
+            transform: none;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-18px);
+            }
+        }
+        /* ---------- SECTION BLEND ---------- */
+        
+        .section {
+            padding: 160px 24px;
+            background: linear-gradient( to bottom, rgba(246, 242, 255, 0), rgba(246, 242, 255, 1), rgba(246, 242, 255, 0));
+        }
+        
+        .section-inner {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 14px;
+        }
+        
+        .section p {
+            color: var(--muted);
+            max-width: 720px;
+            margin: 0 auto 60px;
+        }
+        /* ---------- FEATURES ---------- */
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, .55);
+            backdrop-filter: blur(16px);
+            padding: 34px 26px;
+            border-radius: 28px;
+            box-shadow: 0 30px 80px rgba(139, 124, 246, .18);
+            transition: .3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 40px 110px rgba(139, 124, 246, .3);
+        }
+        
+        .feature h3 {
+            margin-bottom: 8px;
+        }
+        /* ---------- CTA ---------- */
+        
+        .cta {
+            padding: 140px 24px;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 42px;
+            margin-bottom: 14px;
+        }
+        
+        .cta p {
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+        /* ---------- FOOTER ---------- */
+        
+        footer {
+            background: #18192a;
+            color: #e5e7eb;
+            padding: 64px 24px 40px 24px;
+            text-align: center;
+            font-size: 14px;
+            position: relative;
+            z-index: 10;
+            .footer-gradient-bridge {
+                height: 64px;
+                background: linear-gradient(to bottom, rgba(246, 242, 255, 0) 0%, #f6f2ff 40%, #23243a 100%);
+            }
+            footer {
+                background: #23243a;
+                color: #e5e7eb;
+                padding: 0 0 0 0;
+                font-size: 15px;
+                letter-spacing: 0.01em;
+            }
+            .footer-inner {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 64px 24px 32px 24px;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 48px;
+            }
+            .footer-brand {
+                font-size: 1.25rem;
+                font-weight: 700;
+                color: #fff;
+                margin-bottom: 10px;
+            }
+            .footer-desc {
+                color: #b4b8d1;
+                font-size: 1rem;
+                margin-top: 8px;
+                line-height: 1.6;
+            }
+            .footer-col strong {
+                color: #fff;
+                font-size: 1.08em;
+                font-weight: 600;
+                margin-bottom: 10px;
+                display: block;
+                letter-spacing: 0.01em;
+            }
+            .footer-col a {
+                color: #b4b8d1;
+                text-decoration: none;
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 500;
+                transition: color 0.2s;
+            }
+            .footer-col a:hover {
+                color: #fff;
+            }
+            .footer-bottom {
+                text-align: center;
+                color: #7c7e97;
+                font-size: 13px;
+                padding: 32px 0 12px 0;
+                border-top: 1px solid #2e304a;
+                margin-top: 0;
+            }
+            @media (max-width: 700px) {
+                .footer-inner {
+                    grid-template-columns: 1fr;
+                    gap: 32px;
+                    padding: 40px 12px 24px 12px;
+                }
+            }
+            text-align: center
+        }
+        
+        .phone-stack {
+            margin: 60px auto 0
+        }
+    </style>
+</head>
+
+<body id="top">
+    <div class="page-bg"></div>
+
+    <nav>
+        <div class="nav-inner">
+            <div class="logo" style="display:flex;align-items:center;gap:12px;">
+                <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" style="height:38px;width:auto;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                <span style="font-size:1.45rem;font-weight:700;color:#6f63e6;letter-spacing:0.5px;">Destnly</span>
+            </div>
+            <div class="nav-links">
+                <a href="#top">Home</a>
+                <a href="features.html">Features</a>
+                <a href="about.html">About</a>
+                <a href="safety.html">Safety</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div>
+                <h1>Find the connection<br>meant for you</h1>
+                <p>
+                    Destnly helps you build meaningful relationships based on values, compatibility, and genuine intent — not endless swiping.
+                </p>
+
+                <div class="hero-actions">
+                    <div class="store-buttons">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="phone-stack">
+                <img src="assets/images/phone1.png" class="phone back">
+                <img src="assets/images/phone2.png" class="phone front">
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-inner">
+            <!-- Section A: Why Destnly exists -->
+            <h2>Dating, with intention</h2>
+            <p>
+                We created Destnly for people who are tired of endless swiping and shallow matches. Destnly is designed for those who want clarity, respect, and real emotional connection — whether that leads to love, partnership, or something meaningful in between.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section B: How Destnly feels different -->
+    <section class="section">
+        <div class="section-inner">
+            <h2>Designed for how people actually connect</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Less noise, more clarity</h3>
+                    <p>
+                        We reduce distraction and surface matches that align with what you care about — not just what looks good at first glance.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>Real people, real intent</h3>
+                    <p>
+                        Profiles on Destnly are built around authenticity, helping you understand the person beyond photos.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>Conversations that flow</h3>
+                    <p>
+                        Thoughtful prompts and shared context help conversations start naturally and stay meaningful.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section C: Trust & Safety Preview -->
+    <section class="section">
+        <div class="section-inner">
+            <h2>A space built on trust</h2>
+            <p>
+                Safety, privacy, and respect are not optional — they’re foundational. Destnly is built to protect your experience at every step.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <h3>Privacy-first by design</h3>
+                    <p>
+                        You control your visibility, data, and interactions — always.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>Verified presence</h3>
+                    <p>
+                        We actively work to reduce fake accounts and bad actors.
+                    </p>
+                </div>
+                <div class="feature">
+                    <h3>Respect-driven community</h3>
+                    <p>
+                        Clear standards and reporting tools help keep Destnly welcoming for everyone.
+                    </p>
+                </div>
+            </div>
+            <div style="margin-top:40px">
+                <a href="safety.html" class="join-btn">Learn about Safety</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-gradient-bridge"></div>
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <div class="footer-brand" style="display:flex;align-items:center;gap:12px;">
+                    <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" style="height:38px;width:auto;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                    <span>Destnly</span>
+                </div>
+                <div class="footer-desc" style="margin-top:10px;font-size:1.08rem;color:#b4b8d1;font-weight:500;">
+                    Where stories begin
+                </div>
+                <div class="footer-social" aria-label="Destnly social media links">
+                    <a href="https://x.com/Destnly_handle?t=E3qAe8VxEao6mIHqsgu2Uw&s=09" class="social-x" target="_blank" rel="noopener noreferrer" aria-label="Destnly on X (Twitter)">
+                        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/destnly_official?igsh=MWhlbHhtbW5sdHd3cA==" class="social-ig" target="_blank" rel="noopener noreferrer" aria-label="Destnly on Instagram">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/16ZKn8gzsk/" class="social-fb" target="_blank" rel="noopener noreferrer" aria-label="Destnly on Facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/destnly-main-a7b57238b/" class="social-li" target="_blank" rel="noopener noreferrer" aria-label="Destnly on LinkedIn">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <strong>Product</strong>
+                <a href="features.html">Features</a>
+                <a href="safety.html">Safety</a>
+            </div>
+            <div class="footer-col">
+                <strong>Company</strong>
+                <a href="about.html">About</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="footer-col">
+                <strong>Legal</strong>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Destnly. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>
