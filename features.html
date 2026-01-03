@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features | Destnly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <style>
+        body {
+            font-family: Inter, system-ui;
+            color: #1f2937;
+            background: #f6f2ff;
+            overflow-x: hidden;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(168, 128, 222, 0.8);
+            backdrop-filter: blur(14px);
+        }
+        
+        .nav-inner {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 48px;
+            width: auto;
+            border-radius: 12px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        .nav-cta {
+            background: linear-gradient(135deg, #8b7cf6, #6f63e6);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .section {
+            padding: 120px 24px 180px;
+        }
+        
+        .section-inner {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(139, 124, 246, 0.08);
+            padding: 40px 24px;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(139, 124, 246, 0.08);
+            padding: 32px 28px;
+            min-width: 220px;
+            max-width: 320px;
+            flex: 1 1 220px;
+        }
+        
+        .feature h3 {
+            color: #8b7cf6;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .feature p {
+            color: #6b7280;
+            font-size: 16px;
+        }
+    </style>
+    <style>
+        @media (max-width: 900px) {
+            .section-inner {
+                max-width: 98vw;
+                padding: 0 8px;
+            }
+            .features {
+                gap: 18px;
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .nav-inner {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 10px 6px;
+            }
+            .logo {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 8px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 12px;
+                justify-content: center;
+            }
+            .nav-links a {
+                font-size: 15px;
+                padding: 7px 10px;
+            }
+            .nav-cta {
+                margin-top: 6px;
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+                display: block;
+            }
+            .section {
+                padding: 60px 4vw 60px;
+            }
+            .features {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                margin-top: 24px;
+            }
+            .feature {
+                min-width: 0;
+                width: 98vw;
+                max-width: 400px;
+                padding: 22px 10px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .feature {
+                width: 98vw;
+                padding: 14px 2vw;
+            }
+            .section {
+                padding: 30px 0 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-inner">
+            <div class="logo">
+                <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly">
+            </div>
+            <div class="nav-links">
+                <a href="index.html#top">Home</a>
+                <a href="features.html" class="active">Features</a>
+                <a href="about.html">About</a>
+                <a href="safety.html">Safety</a>
+            </div>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="section-inner">
+            <h1>Features</h1>
+            <h2 style="margin-top:32px; font-size:2rem; color:#6f63e6;">Designed for meaningful connections</h2>
+            <p style="font-size:1.15rem; color:#374151; margin-bottom:32px;">Destnly is built for people who are serious about relationships. Every feature helps real connections grow.</p>
+            <div class="features" id="features">
+                <div class="feature">
+                    <h3>Compatibility-First Matching</h3>
+                    <p>Shared values and long-term intent.</p>
+                </div>
+                <div class="feature">
+                    <h3>Verified Profiles</h3>
+                    <p>Every profile is reviewed.</p>
+                </div>
+                <div class="feature">
+                    <h3>Meaningful Conversations</h3>
+                    <p>Prompts that spark depth.</p>
+                </div>
+                <div class="feature">
+                    <h3>Privacy by Design</h3>
+                    <p>You stay in control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav>
+        <div class="nav-inner">
+            <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+                <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly">
+                <span style="font-size: 1.6rem; font-weight: 700; color: #6f63e6; letter-spacing: 1px;">Destnly</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#top">Home</a>
+                <a href="features.html" class="active">Features</a>
+                <a href="about.html">About</a>
+                <a href="safety.html">Safety</a>
+            </div>
+        </div>
+    </nav>
