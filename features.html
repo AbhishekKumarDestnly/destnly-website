@@ -162,13 +162,35 @@
             }
         }
         
-        @media (max-width: 400px) {
-            .feature {
-                width: 98vw;
-                padding: 14px 2vw;
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 18px !important;
+                width: 100% !important;
+                max-width: 100vw !important;
+                margin: 0 auto !important;
+                padding: 0 !important;
             }
-            .section {
-                padding: 30px 0 30px;
+            .feature {
+                min-width: 0 !important;
+                width: 100% !important;
+                max-width: 420px !important;
+                margin: 0 auto !important;
+                border-radius: 16px !important;
+                padding: 18px 12px !important;
+                box-sizing: border-box !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .feature {
+                max-width: 98vw !important;
+                padding: 12px 2vw !important;
+                border-radius: 10px !important;
             }
         }
     </style>
@@ -213,17 +235,6 @@
             </div>
         </div>
     </section>
-    <nav>
-        <div class="nav-inner">
-            <div class="logo" style="display: flex; align-items: center; gap: 10px;">
-                <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly">
-                <span style="font-size: 1.6rem; font-weight: 700; color: #6f63e6; letter-spacing: 1px;">Destnly</span>
-            </div>
-            <div class="nav-links">
-                <a href="index.html#top">Home</a>
-                <a href="features.html" class="active">Features</a>
-                <a href="about.html">About</a>
-                <a href="safety.html">Safety</a>
-            </div>
-        </div>
-    </nav>
+</body>
+
+</html>

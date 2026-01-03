@@ -12,6 +12,387 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+        /* ------------------ MOBILE-FIRST RESPONSIVE FIXES ------------------ */
+        
+        @media (max-width: 768px) {
+            html,
+            body {
+                overflow-x: hidden !important;
+            }
+            nav {
+                padding: 0;
+                min-height: 48px;
+                background: rgba(168, 128, 222, 0.92);
+            }
+            .nav-inner {
+                flex-direction: column;
+                gap: 0;
+                padding: 10px 8px 0 8px;
+                min-height: 48px;
+            }
+            .logo {
+                justify-content: center;
+                width: 100%;
+            }
+            .logo img {
+                height: 28px !important;
+            }
+            .logo span {
+                font-size: 1.05rem !important;
+            }
+            .nav-links {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 6px;
+            }
+            .nav-links a {
+                font-size: 0.98rem;
+                padding: 4px 0;
+            }
+            .hero {
+                padding: 38px 4vw 38px;
+            }
+            .hero-inner {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 32px;
+            }
+            .hero h1 {
+                font-size: 1.45rem;
+                line-height: 1.18;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .hero p {
+                font-size: 1.02rem;
+                text-align: center;
+                max-width: 98vw;
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                margin-top: 16px;
+            }
+            .store-buttons {
+                flex-direction: row;
+                justify-content: center;
+                gap: 8px;
+            }
+            .store-buttons img {
+                height: 32px;
+            }
+            .join-btn {
+                padding: 10px 18px;
+                font-size: 1rem;
+            }
+            .phone-stack {
+                width: 90vw;
+                max-width: 220px;
+                height: 180px;
+                margin: 0 auto;
+            }
+            .phone {
+                width: 90px;
+                border-radius: 10px;
+                left: 0 !important;
+                right: 0 !important;
+                margin: 0 auto;
+            }
+            .section {
+                padding: 38px 2vw;
+            }
+            .section-inner {
+                text-align: center;
+            }
+            .section h2 {
+                font-size: 1.08rem;
+                margin-bottom: 8px;
+            }
+            .section p {
+                font-size: 0.98rem;
+                margin-bottom: 28px;
+            }
+            .features {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .feature {
+                padding: 12px 6px;
+                border-radius: 10px;
+            }
+            .cta {
+                padding: 32px 2vw;
+            }
+            .cta h2 {
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+            .cta p {
+                font-size: 0.98rem;
+                margin-bottom: 18px;
+            }
+            .footer-gradient-bridge {
+                height: 32px;
+                background: linear-gradient(to bottom, rgba(246, 242, 255, 0) 0%, #f6f2ff 40%, #23243a 100%);
+            }
+            footer {
+                padding: 32px 8px 18px 8px;
+                text-align: center;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                padding: 18px 4px 8px 4px;
+            }
+            .footer-brand {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+            .footer-desc {
+                font-size: 0.92rem;
+                margin-top: 4px;
+            }
+            .footer-social {
+                gap: 8px;
+                margin-top: 10px;
+                justify-content: center;
+            }
+            .footer-social a {
+                width: 28px;
+                height: 28px;
+                font-size: 0.92rem;
+            }
+            .footer-col strong {
+                font-size: 0.98rem;
+                margin-bottom: 6px;
+            }
+            .footer-col a {
+                font-size: 0.92rem;
+                margin-bottom: 6px;
+            }
+            .footer-bottom {
+                font-size: 11px;
+                padding: 10px 0 4px 0;
+                margin-top: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 24px 2vw 24px;
+            }
+            .hero h1 {
+                font-size: 1.08rem;
+                margin-bottom: 6px;
+            }
+            .hero p {
+                font-size: 0.92rem;
+            }
+            .phone-stack {
+                max-width: 120px;
+                height: 90px;
+            }
+            .phone {
+                width: 48px;
+                border-radius: 6px;
+            }
+            .section {
+                padding: 18px 1vw;
+            }
+            .section h2 {
+                font-size: 0.92rem;
+            }
+            .feature {
+                padding: 6px 2px;
+                border-radius: 6px;
+            }
+            .cta {
+                padding: 16px 1vw;
+            }
+            .cta h2 {
+                font-size: 0.92rem;
+            }
+            .footer-inner {
+                gap: 10px;
+                padding: 8px 2px 4px 2px;
+            }
+            .footer-brand {
+                font-size: 0.92rem;
+            }
+            .footer-desc {
+                font-size: 0.88rem;
+            }
+            .footer-social {
+                gap: 6px;
+                margin-top: 6px;
+            }
+            .footer-social a {
+                width: 22px;
+                height: 22px;
+                font-size: 0.82rem;
+            }
+            .footer-col strong {
+                font-size: 0.92rem;
+            }
+            .footer-col a {
+                font-size: 0.88rem;
+            }
+            .footer-bottom {
+                font-size: 10px;
+                padding: 6px 0 2px 0;
+            }
+        }
+        /* ------------------ RESPONSIVE FIXES ------------------ */
+        
+        @media (max-width: 1024px) {
+            .hero-inner {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 48px;
+            }
+            .hero {
+                padding: 64px 12px 80px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+                text-align: center;
+                line-height: 1.18;
+            }
+            .hero p {
+                font-size: 1.08rem;
+                text-align: center;
+                max-width: 95vw;
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                margin-top: 22px;
+            }
+            .store-buttons {
+                flex-direction: row;
+                justify-content: center;
+                gap: 12px;
+            }
+            .phone-stack {
+                width: 90vw;
+                max-width: 340px;
+                height: 400px;
+            }
+            .phone {
+                width: 180px;
+                border-radius: 22px;
+            }
+            .section {
+                padding: 70px 8px;
+            }
+            .section h2 {
+                font-size: 1.5rem;
+            }
+            .features {
+                gap: 18px;
+            }
+            .feature {
+                padding: 22px 12px;
+                border-radius: 18px;
+            }
+            .cta {
+                padding: 60px 8px;
+            }
+            .cta h2 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 700px) {
+            nav {
+                padding: 0;
+            }
+            .nav-inner {
+                flex-direction: column;
+                gap: 10px;
+                padding: 12px 8px;
+            }
+            .nav-links {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .logo img {
+                height: 32px !important;
+            }
+            .logo span {
+                font-size: 1.1rem !important;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 32px 8px 18px 8px;
+            }
+            .footer-brand {
+                font-size: 1.1rem;
+            }
+            .footer-desc {
+                font-size: 0.95rem;
+            }
+            .footer-social {
+                gap: 10px;
+                margin-top: 14px;
+            }
+            .footer-social a {
+                width: 34px;
+                height: 34px;
+                font-size: 1rem;
+            }
+            .footer-col strong {
+                font-size: 1rem;
+            }
+            .footer-bottom {
+                font-size: 12px;
+                padding: 18px 0 8px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 38px 4vw 38px;
+            }
+            .hero h1 {
+                font-size: 1.3rem;
+                margin-bottom: 12px;
+            }
+            .hero p {
+                font-size: 0.98rem;
+            }
+            .phone-stack {
+                max-width: 220px;
+                height: 220px;
+            }
+            .phone {
+                width: 110px;
+                border-radius: 12px;
+            }
+            .section {
+                padding: 38px 2vw;
+            }
+            .section h2 {
+                font-size: 1.1rem;
+            }
+            .feature {
+                padding: 12px 6px;
+                border-radius: 10px;
+            }
+            .cta {
+                padding: 32px 2vw;
+            }
+            .cta h2 {
+                font-size: 1rem;
+            }
+        }
         /* Social Media Footer Icons - Modern, Premium Style */
         
         .footer-social {
