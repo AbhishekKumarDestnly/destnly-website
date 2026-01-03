@@ -6,10 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destnly – Find the connection meant for you</title>
 
+    <!-- Font Awesome CDN for social icons (latest v6.5.2) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-     :root {
+        /* Social Media Footer Icons - Modern, Premium Style */
+        
+        .footer-social {
+            display: flex;
+            gap: 18px;
+            margin-top: 22px;
+            margin-bottom: 8px;
+        }
+        
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(140, 124, 246, 0.13);
+            color: #b4b8d1;
+            font-size: 1.35rem;
+            transition: background 0.22s cubic-bezier(.4, 0, .2, 1), color 0.22s cubic-bezier(.4, 0, .2, 1), box-shadow 0.22s cubic-bezier(.4, 0, .2, 1), transform 0.18s cubic-bezier(.4, 0, .2, 1);
+            outline: none;
+            border: none;
+        }
+        
+        .footer-social a:focus {
+            box-shadow: 0 0 0 2px #8b7cf6;
+        }
+        
+        .footer-social a:hover {
+            background: linear-gradient(135deg, #8b7cf6 0%, #b4b8d1 100%);
+            color: #fff;
+            transform: translateY(-3px) scale(1.12);
+            box-shadow: 0 4px 16px 0 rgba(140, 124, 246, 0.13);
+        }
+        
+        .footer-social a .fa-brands {
+            pointer-events: none;
+        }
+        
+        @media (max-width: 600px) {
+            .footer-social {
+                gap: 12px;
+                margin-top: 18px;
+            }
+            .footer-social a {
+                width: 38px;
+                height: 38px;
+                font-size: 1.1rem;
+            }
+        }
+        
+         :root {
             --accent: #8b7cf6;
             --accent-dark: #6f63e6;
             --text: #1f2937;
@@ -330,7 +384,6 @@
         .phone-stack {
             margin: 60px auto 0
         }
-    }
     </style>
 </head>
 
@@ -455,6 +508,20 @@
                 </div>
                 <div class="footer-desc" style="margin-top:10px;font-size:1.08rem;color:#b4b8d1;font-weight:500;">
                     Where stories begin
+                </div>
+                <div class="footer-social" aria-label="Destnly social media links">
+                    <a href="https://x.com/Destnly_handle?t=E3qAe8VxEao6mIHqsgu2Uw&s=09" class="social-x" target="_blank" rel="noopener noreferrer" aria-label="Destnly on X (Twitter)">
+                        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/destnly_official?igsh=MWhlbHhtbW5sdHd3cA==" class="social-ig" target="_blank" rel="noopener noreferrer" aria-label="Destnly on Instagram">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/16ZKn8gzsk/" class="social-fb" target="_blank" rel="noopener noreferrer" aria-label="Destnly on Facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/destnly-main-a7b57238b/" class="social-li" target="_blank" rel="noopener noreferrer" aria-label="Destnly on LinkedIn">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
                 </div>
             </div>
             <div class="footer-col">
