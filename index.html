@@ -27,39 +27,8 @@
             body {
                 overflow-x: hidden !important;
             }
-            nav {
-                padding: 0;
-                min-height: 48px;
-                background: rgba(168, 128, 222, 0.92);
-            }
-            .nav-inner {
-                flex-direction: column;
-                gap: 0;
-                padding: 10px 8px 0 8px;
-                min-height: 48px;
-            }
-            .logo {
-                justify-content: center;
-                width: 100%;
-            }
-            .logo img {
-                height: 28px !important;
-            }
-            .logo span {
-                font-size: 1.05rem !important;
-            }
-            .nav-links {
-                gap: 10px;
-                flex-wrap: wrap;
-                justify-content: center;
-                margin-top: 6px;
-            }
-            .nav-links a {
-                font-size: 0.98rem;
-                padding: 4px 0;
-            }
             .hero {
-                padding: 38px 4vw 38px;
+                padding: 132px 4vw 38px;
             }
             .hero-inner {
                 display: flex;
@@ -190,7 +159,7 @@
         
         @media (max-width: 480px) {
             .hero {
-                padding: 24px 2vw 24px;
+                padding: 124px 2vw 24px;
             }
             .hero h1 {
                 font-size: 1.08rem;
@@ -317,25 +286,6 @@
         }
         
         @media (max-width: 700px) {
-            nav {
-                padding: 0;
-            }
-            .nav-inner {
-                flex-direction: column;
-                gap: 10px;
-                padding: 12px 8px;
-            }
-            .nav-links {
-                gap: 16px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .logo img {
-                height: 32px !important;
-            }
-            .logo span {
-                font-size: 1.1rem !important;
-            }
             .footer-inner {
                 grid-template-columns: 1fr;
                 gap: 24px;
@@ -367,7 +317,7 @@
         
         @media (max-width: 480px) {
             .hero {
-                padding: 38px 4vw 38px;
+                padding: 124px 4vw 38px;
             }
             .hero h1 {
                 font-size: 1.3rem;
@@ -482,11 +432,15 @@
         /* ---------- NAV ---------- */
         
         nav {
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
             z-index: 50;
             background: rgba(168, 128, 222, 0.8);
             backdrop-filter: blur(14px);
+            overflow-x: hidden;
         }
         
         .nav-inner {
@@ -528,6 +482,10 @@
             text-decoration: none;
             color: #374151;
             font-weight: 600;
+            display: inline-flex;
+            justify-content: center;
+            min-width: 96px;
+            text-align: center;
             padding: 8px 12px;
             border-radius: 10px;
             transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
@@ -542,6 +500,44 @@
             background: #fff;
             color: #4d3fbe;
             box-shadow: 0 6px 16px rgba(111, 99, 230, 0.18);
+        }
+        
+        @media (max-width: 720px) {
+            .nav-inner {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 10px 6px;
+            }
+            .logo {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 8px;
+            }
+            .nav-links {
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+            .nav-links a {
+                font-size: 15px;
+                min-width: 82px;
+                padding: 7px 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo img {
+                height: 32px !important;
+            }
+            .logo-text {
+                font-size: 1.12rem !important;
+            }
+            .nav-links a {
+                font-size: 14px;
+                min-width: 72px;
+                padding: 6px 8px;
+            }
         }
         
         .nav-cta {
@@ -830,7 +826,7 @@
             <div>
                 <h1>Find the connection<br>meant for you</h1>
                 <p>
-                    Destnly helps you build meaningful relationships based on values, compatibility, and genuine intent — not endless swiping.
+                    Destnly helps you build meaningful relationships based on values, compatibility, and genuine intent. Not endless swiping.
                 </p>
 
                 <div class="hero-actions">
@@ -855,7 +851,7 @@
             <!-- Section A: Why Destnly exists -->
             <h2>Dating, with intention</h2>
             <p>
-                We created Destnly for people who are tired of endless swiping and shallow matches. Destnly is designed for those who want clarity, respect, and real emotional connection — whether that leads to love, partnership, or something meaningful in between.
+                We created Destnly for people who are tired of endless swiping and shallow matches. Destnly is designed for those who want clarity, respect, and real emotional connection, whether that leads to love, partnership, or something meaningful in between.
             </p>
         </div>
     </section>
@@ -868,7 +864,7 @@
                 <div class="feature">
                     <h3>Less noise, more clarity</h3>
                     <p>
-                        We reduce distraction and surface matches that align with what you care about — not just what looks good at first glance.
+                        We reduce distraction and surface matches that align with what you care about, not just what looks good at first glance.
                     </p>
                 </div>
                 <div class="feature">
@@ -892,13 +888,13 @@
         <div class="section-inner">
             <h2>A space built on trust</h2>
             <p>
-                Safety, privacy, and respect are not optional — they’re foundational. Destnly is built to protect your experience at every step.
+                Safety, privacy, and respect are not optional, they’re foundational. Destnly is built to protect your experience at every step.
             </p>
             <div class="features">
                 <div class="feature">
                     <h3>Privacy-first by design</h3>
                     <p>
-                        You control your visibility, data, and interactions — always.
+                        You control your visibility, data, and interactions always.
                     </p>
                 </div>
                 <div class="feature">
@@ -961,7 +957,7 @@
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
                 <a href="account-deletion.html">Account Deletion</a>
-                    <a href="child-safety.html">Child Safety</a>
+                <a href="child-safety.html">Child Safety</a>
             </div>
         </div>
         <div class="footer-bottom">
