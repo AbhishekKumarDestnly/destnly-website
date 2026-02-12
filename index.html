@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destnly – Find the connection meant for you</title>
 
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="shortcut icon" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="application-name" content="Destnly">
+    <meta name="apple-mobile-web-app-title" content="Destnly">
+    <meta name="theme-color" content="#8b7cf6">
+
     <!-- Font Awesome CDN for social icons (latest v6.5.2) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -491,9 +499,23 @@
         }
         
         .logo {
-            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-size: 1.45rem;
             font-weight: 700;
-            color: var(--accent);
+            color: #6f63e6;
+            letter-spacing: 0.5px;
+            line-height: 1;
         }
         
         .nav-links {
@@ -505,7 +527,21 @@
         .nav-links a {
             text-decoration: none;
             color: #374151;
-            font-weight: 500;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 10px;
+            transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #31295c;
+            background: rgba(111, 99, 230, 0.12);
+        }
+        
+        .nav-links a.active {
+            background: #fff;
+            color: #4d3fbe;
+            box-shadow: 0 6px 16px rgba(111, 99, 230, 0.18);
         }
         
         .nav-cta {
@@ -773,12 +809,14 @@
 
     <nav>
         <div class="nav-inner">
-            <div class="logo" style="display:flex;align-items:center;gap:12px;">
-                <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" style="height:38px;width:auto;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
-                <span style="font-size:1.45rem;font-weight:700;color:#6f63e6;letter-spacing:0.5px;">Destnly</span>
+            <div class="logo">
+                <a class="logo-link" href="index.html#top" aria-label="Destnly Home">
+                    <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" style="height:38px;width:auto;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                    <span class="logo-text">Destnly</span>
+                </a>
             </div>
             <div class="nav-links">
-                <a href="#top">Home</a>
+                <a href="#top" class="active" aria-current="page">Home</a>
                 <a href="features.html">Features</a>
                 <a href="about.html">About</a>
                 <a href="safety.html">Safety</a>
@@ -797,8 +835,10 @@
 
                 <div class="hero-actions">
                     <div class="store-buttons">
-                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
+                        <!-- <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"> -->
+                        <a href="https://play.google.com/store/apps/details?id=com.destnlyapp" target="_blank" rel="noopener noreferrer" aria-label="Download Destnly on Google Play">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get Destnly on Google Play">
+                        </a>
                     </div>
                 </div>
             </div>
