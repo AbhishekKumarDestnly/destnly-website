@@ -755,6 +755,114 @@
         .phone-stack {
             margin: 60px auto 0
         }
+        /* ---------- HOME PAGE FINAL RESPONSIVE OVERRIDES ---------- */
+        
+        @media (max-width: 1024px) {
+            .hero {
+                padding: 132px 16px 72px !important;
+            }
+            .hero-inner {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 36px !important;
+            }
+            .hero h1,
+            .hero p {
+                text-align: center !important;
+            }
+            .hero p {
+                max-width: 92vw !important;
+            }
+            .hero-actions {
+                justify-content: center !important;
+            }
+            .phone-stack {
+                width: min(86vw, 320px) !important;
+                height: min(95vw, 360px) !important;
+            }
+            .phone {
+                width: min(44vw, 170px) !important;
+            }
+        }
+        
+        @media (max-width: 720px) {
+            .hero {
+                padding: 136px 12px 56px !important;
+            }
+            .hero h1 {
+                font-size: 1.6rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 10px !important;
+            }
+            .hero p {
+                font-size: 0.98rem !important;
+                line-height: 1.55 !important;
+                max-width: 96vw !important;
+            }
+            .store-buttons {
+                justify-content: center !important;
+            }
+            .store-buttons img {
+                height: 40px !important;
+                max-width: 84vw !important;
+            }
+            .phone-stack {
+                width: min(86vw, 250px) !important;
+                height: 210px !important;
+            }
+            .phone {
+                width: min(41vw, 108px) !important;
+                border-radius: 12px !important;
+            }
+            .section {
+                padding: 56px 12px !important;
+            }
+            .section h2 {
+                font-size: 1.35rem !important;
+            }
+            .section p {
+                font-size: 0.98rem !important;
+                margin-bottom: 24px !important;
+            }
+            .feature {
+                padding: 16px 12px !important;
+                border-radius: 14px !important;
+            }
+            footer {
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 126px 10px 40px !important;
+            }
+            .hero h1 {
+                font-size: 1.28rem !important;
+            }
+            .hero p {
+                font-size: 0.92rem !important;
+            }
+            .store-buttons img {
+                height: 34px !important;
+            }
+            .phone-stack {
+                width: min(88vw, 180px) !important;
+                height: 140px !important;
+            }
+            .phone {
+                width: min(40vw, 76px) !important;
+                border-radius: 9px !important;
+            }
+            .section {
+                padding: 40px 10px !important;
+            }
+            .section h2 {
+                font-size: 1.08rem !important;
+            }
+        }
     </style>
 </head>
 
