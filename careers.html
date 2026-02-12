@@ -14,7 +14,10 @@
     <meta name="apple-mobile-web-app-title" content="Destnly">
     <meta name="theme-color" content="#8b7cf6">
     <meta name="description" content="Explore careers at Destnly. We are building meaningful connections with a product-first, safety-first mindset.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
     <style>
          :root {
             --accent: #8b7cf6;
@@ -46,7 +49,7 @@
             position: fixed;
             inset: 0;
             z-index: -2;
-            background: radial-gradient(circle at 10% 10%, rgba(139, 124, 246, 0.18), transparent 35%), radial-gradient(circle at 90% 20%, rgba(111, 99, 230, 0.14), transparent 30%), linear-gradient(180deg, #fcfaff 0%, #f6f2ff 55%, #f4efff 100%);
+            background: linear-gradient( to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.75)), url("assets/images/hero-bg.png") center/cover no-repeat;
         }
         
         nav {
@@ -291,7 +294,7 @@
         <div class="nav-inner">
             <div class="logo">
                 <a class="logo-link" href="index.html#top" aria-label="Destnly Home">
-                    <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly">
+                    <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" width="879" height="751">
                     <span class="logo-text">Destnly</span>
                 </a>
             </div>

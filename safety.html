@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safety & Trust – Destnly</title>
+    <meta name="description" content="Read how Destnly keeps users safe with profile moderation, reporting tools, and privacy-first safeguards.">
 
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="shortcut icon" href="assets/images/logo.png">
@@ -14,7 +15,10 @@
     <meta name="apple-mobile-web-app-title" content="Destnly">
     <meta name="theme-color" content="#8b7cf6">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
 
     <style>
          :root {
@@ -35,6 +39,13 @@
             color: #1f2937;
             background: #f6f2ff;
             overflow-x: hidden;
+        }
+
+        .page-bg {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient( to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.75)), url("assets/images/hero-bg.png") center/cover no-repeat;
+            z-index: -2;
         }
         
         html {
@@ -223,11 +234,12 @@
 </head>
 
 <body id="top">
+    <div class="page-bg"></div>
     <nav>
         <div class="nav-inner">
             <div class="logo">
                 <a class="logo-link" href="index.html#top" aria-label="Destnly Home">
-                    <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly">
+                    <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" width="879" height="751">
                     <span class="logo-text">Destnly</span>
                 </a>
             </div>

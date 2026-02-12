@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destnly – Find the connection meant for you</title>
+    <meta name="description" content="Destnly helps you build meaningful relationships through compatibility-first matching, verified profiles, and trust-first design.">
 
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="shortcut icon" href="assets/images/logo.png">
@@ -13,11 +14,21 @@
     <meta name="application-name" content="Destnly">
     <meta name="apple-mobile-web-app-title" content="Destnly">
     <meta name="theme-color" content="#8b7cf6">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/images/hero-bg.png">
+    <link rel="preload" as="image" href="assets/images/phone2-optimized.png">
 
     <!-- Font Awesome CDN for social icons (latest v6.5.2) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    </noscript>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
 
     <style>
         /* ------------------ MOBILE-FIRST RESPONSIVE FIXES ------------------ */
@@ -482,6 +493,10 @@
             text-decoration: none;
             color: #374151;
             font-weight: 600;
+            display: inline-flex;
+            justify-content: center;
+            min-width: 96px;
+            text-align: center;
             padding: 8px 12px;
             border-radius: 10px;
             transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
@@ -787,6 +802,27 @@
         }
         
         @media (max-width: 720px) {
+            .nav-inner {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                padding: 10px 6px !important;
+            }
+            .logo {
+                display: flex !important;
+                justify-content: center !important;
+                margin-bottom: 8px !important;
+            }
+            .nav-links {
+                width: 100% !important;
+                flex-wrap: wrap !important;
+                gap: 10px !important;
+                justify-content: center !important;
+            }
+            .nav-links a {
+                font-size: 15px !important;
+                min-width: 82px !important;
+                padding: 7px 10px !important;
+            }
             .hero {
                 padding: 136px 12px 56px !important;
             }
@@ -808,12 +844,36 @@
                 max-width: 84vw !important;
             }
             .phone-stack {
-                width: min(86vw, 250px) !important;
-                height: 210px !important;
+                width: 100% !important;
+                max-width: 270px !important;
+                height: auto !important;
+                margin: 0 auto !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                align-items: end !important;
+                justify-items: center !important;
+                gap: 0 !important;
+                overflow: visible !important;
             }
             .phone {
-                width: min(41vw, 108px) !important;
-                border-radius: 12px !important;
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                height: auto !important;
+                border-radius: 14px !important;
+                box-shadow: 0 20px 42px rgba(0, 0, 0, .20) !important;
+                animation: none !important;
+            }
+            .phone.back {
+                display: block !important;
+                width: min(42vw, 114px) !important;
+                transform: translateY(32px) !important;
+                opacity: 0.95 !important;
+            }
+            .phone.front {
+                width: min(46vw, 128px) !important;
+                transform: translateY(0) !important;
             }
             .section {
                 padding: 56px 12px !important;
@@ -836,6 +896,17 @@
         }
         
         @media (max-width: 480px) {
+            .logo img {
+                height: 32px !important;
+            }
+            .logo-text {
+                font-size: 1.12rem !important;
+            }
+            .nav-links a {
+                font-size: 14px !important;
+                min-width: 72px !important;
+                padding: 6px 8px !important;
+            }
             .hero {
                 padding: 126px 10px 40px !important;
             }
@@ -849,12 +920,17 @@
                 height: 34px !important;
             }
             .phone-stack {
-                width: min(88vw, 180px) !important;
-                height: 140px !important;
+                max-width: 220px !important;
+                height: auto !important;
             }
-            .phone {
-                width: min(40vw, 76px) !important;
-                border-radius: 9px !important;
+            .phone.back {
+                width: min(42vw, 92px) !important;
+                transform: translateY(26px) !important;
+            }
+            .phone.front {
+                width: min(45vw, 102px) !important;
+                transform: translateY(0) !important;
+                border-radius: 11px !important;
             }
             .section {
                 padding: 40px 10px !important;
@@ -873,7 +949,7 @@
         <div class="nav-inner">
             <div class="logo">
                 <a class="logo-link" href="index.html#top" aria-label="Destnly Home">
-                    <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" style="height:38px;width:auto;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                    <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" width="879" height="751" style="height:38px;width:auto;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
                     <span class="logo-text">Destnly</span>
                 </a>
             </div>
@@ -899,15 +975,15 @@
                     <div class="store-buttons">
                         <!-- <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store"> -->
                         <a href="https://play.google.com/store/apps/details?id=com.destnlyapp" target="_blank" rel="noopener noreferrer" aria-label="Download Destnly on Google Play">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get Destnly on Google Play">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get Destnly on Google Play" width="646" height="250">
                         </a>
                     </div>
                 </div>
             </div>
 
             <div class="phone-stack">
-                <img src="assets/images/phone1.png" class="phone back" alt="Destnly app screenshot 1">
-                <img src="assets/images/phone2.png" class="phone front" alt="Destnly app screenshot 2">
+                <img src="assets/images/phone1-optimized.png" class="phone back" alt="Destnly app screenshot 1" width="252" height="560" loading="lazy" decoding="async" fetchpriority="low">
+                <img src="assets/images/phone2-optimized.png" class="phone front" alt="Destnly app screenshot 2" width="252" height="560" loading="eager" decoding="async" fetchpriority="high">
             </div>
         </div>
     </section>
@@ -987,7 +1063,7 @@
         <div class="footer-inner">
             <div>
                 <div class="footer-brand" style="display:flex;align-items:center;gap:12px;">
-                    <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" style="height:38px;width:auto;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
+                    <img src="assets/images/destnly_logo_no_bg.png" alt="Destnly" width="879" height="751" style="height:38px;width:auto;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);">
                     <span>Destnly</span>
                 </div>
                 <div class="footer-desc" style="margin-top:10px;font-size:1.08rem;color:#b4b8d1;font-weight:500;">
